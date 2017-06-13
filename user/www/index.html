@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title>Geocorp</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="lib/simplex.min.css" rel="stylesheet" >
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="lib/startbootstrap-simple-sidebar-gh-pages/css/simple-sidebar.css" rel="stylesheet">
+
+    <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7NYIMvtywmXrt2iyiHjhbfDax4pxlVtA"></script>
+
+</head>
+<body>
+    <div ng-app="Geocorp" ng-controller="listado">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Geocorp</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell" aria-hidden="true"></i> <span class="badge" ng-show="lista.length>0">{{lista.length}}</span></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li ng-repeat="x in lista" ng-click="llamar(x)">
+                      <a href="#">
+                        Nombre: {{x.center.person.nombre}} {{x.center.person.nombre2}} {{x.center.person.apellido}} {{x.center.person.apellido2}} ,
+                        Cedula : {{x.center.person.cedula}}
+                         a {{x.distancia_text}}
+
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+          <div class="row" id="atender">
+            <div class="col-xs-4">
+              {{select.mensaje}}
+            </div>
+            <div class="col-xs-6">
+              {{select.center.person.nombre}} {{select.center.person.nombre2}} {{select.center.person.apellido}} {{select.center.person.apellido2}}
+            </div>
+            <div class="col-xs-2 btn btn-default" ng-click="atender(select)" ng-show="!select.atendiendo">
+              {{select.atendiendo_mensaje}}
+            </div>
+            <div class="col-xs-2 btn btn-default" ng-click="atendida(select)" ng-show="select.atendiendo">
+              {{select.atendiendo_mensaje}}
+            </div>
+          </div>
+          <div id="mapa">
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/angular.min.js" ></script>
+    <script type="text/javascript" src="lib/jquery-3.1.1.min.js" ></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/user.js" ></script>
+</body>
+</html>

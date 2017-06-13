@@ -1,0 +1,19 @@
+{
+  "project": {
+    "currentBuildConfiguration": "Android",
+    "projectFiles": {},
+    "projectDirectories": {},
+    "projectSettingsVersion": "3.0.0",
+    "currentService": {}
+  },
+  "editorTab": {
+    "currentEditorMode": 0
+  },
+  "build-tab": {
+    "selectedTargets": [],
+    "emailListForShareBuild": [
+      "msaturno18@gmail.com",
+      "joseph_33504@hotmail.com"
+    ]
+  }
+}
